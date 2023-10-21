@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import 'offall3_page.dart';
+import 'offall1_page.dart';
 
-class Offall2Page extends StatelessWidget {
-  const Offall2Page({super.key});
+class OffallPage extends StatelessWidget {
+  const OffallPage({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Off all 2 Page'),
+        title: const Text('Off All Page'),
       ),
       body: Center(
         child: Column(
@@ -18,16 +18,19 @@ class Offall2Page extends StatelessWidget {
           children: [
             TextButton(
               onPressed: () {
-                Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => const Offall3Page()));
+                Navigator.of(context).push(MaterialPageRoute(
+                  builder: (context) => const Offall1Page(),
+                  settings: RouteSettings(name: '/offall1'),
+                ));
               },
-              child: const Text('Go to Page off all 3 com Flutter Nativo'),
+              child: const Text('Go to Page off All 1 com Flutter Nativo'),
             ),
             const SizedBox(height: 20),
             TextButton(
               onPressed: () {
-                Get.off(const Offall3Page());
+                Get.to(const Offall1Page());
               },
-              child: const Text('Go to Page all off 3 com GetX'),
+              child: const Text('Go to Page off All 1 com GetX'),
             ),
           ],
         ),

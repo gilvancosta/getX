@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../nav/nav1_page.dart';
-import '../nav/nav2_page.dart';
-import '../off/off_page.dart';
-import '../offAll/offall_page.dart';
+import '../navigator/await_params/await_params_page.dart';
+import '../navigator/nav/nav1_page.dart';
+import '../navigator/nav/nav2_page.dart';
+import '../navigator/off/off_page.dart';
+import '../navigator/offAll/offall_page.dart';
+
+import '../navigator/send_params/send_params_page.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -53,8 +56,6 @@ class _HomePageState extends State<HomePage> {
             },
             child: const Text('Off Page'),
           ),
-
-      
           const SizedBox(height: 20),
           ElevatedButton(
             onPressed: () {
@@ -66,7 +67,28 @@ class _HomePageState extends State<HomePage> {
             },
             child: const Text('OffAll (PopAndRemoveUntill)'),
           ),
-
+          const SizedBox(height: 20),
+          ElevatedButton(
+            onPressed: () {
+              Get.to(() => const SendParamsPage());
+              // Navigator.pushNamed(context, '/nav1');
+              /*             Navigator.of(context).push(
+                MaterialPageRoute(builder: (context) => const Nav1Page()),
+              );*/
+            },
+            child: const Text('Send Params'),
+          ),
+          const SizedBox(height: 20),
+          ElevatedButton(
+            onPressed: () {
+              Get.to(() => const AwaitParamsPage());
+              // Navigator.pushNamed(context, '/nav1');
+              /*             Navigator.of(context).push(
+                MaterialPageRoute(builder: (context) => const Nav1Page()),
+              );*/
+            },
+            child: const Text('AwaitParamsPage'),
+          ),
         ],
       )),
     );

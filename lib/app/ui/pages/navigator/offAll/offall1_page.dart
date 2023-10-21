@@ -4,8 +4,7 @@ import 'package:get/get.dart';
 import 'offall2_page.dart';
 
 class Offall1Page extends StatelessWidget {
-
-  const Offall1Page({ super.key });
+  const Offall1Page({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +18,9 @@ class Offall1Page extends StatelessWidget {
           children: [
             TextButton(
               onPressed: () {
-                Navigator.of(context).push(MaterialPageRoute(builder: (context) => const Offall2Page()));
+                Navigator.of(context).push(MaterialPageRoute(
+                  builder: (context) => const Offall2Page(),
+                ));
               },
               child: const Text('Go to Page off 2 com Flutter Nativo'),
             ),

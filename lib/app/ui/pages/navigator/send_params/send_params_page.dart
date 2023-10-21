@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import 'offall1_page.dart';
+import 'send1_params_page.dart';
 
-class OffallPage extends StatelessWidget {
-
-  const OffallPage({ super.key });
+class SendParamsPage extends StatelessWidget {
+  const SendParamsPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -19,14 +18,17 @@ class OffallPage extends StatelessWidget {
           children: [
             TextButton(
               onPressed: () {
-                Navigator.of(context).push(MaterialPageRoute(builder: (context) => const Offall1Page()));
+                Navigator.of(context).push(MaterialPageRoute(
+                  builder: (context) => const Send1ParamsPage(),
+                  settings: const RouteSettings(arguments: 'Flutter Nativo'),
+                ));
               },
               child: const Text('Go to Page off All 1 com Flutter Nativo'),
             ),
             const SizedBox(height: 20),
             TextButton(
               onPressed: () {
-                Get.to(const Offall1Page());
+                Get.to(() => const Send1ParamsPage(), arguments: 'GetX');
               },
               child: const Text('Go to Page off All 1 com GetX'),
             ),
