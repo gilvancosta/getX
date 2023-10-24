@@ -1,13 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-
-import '../navigator/await_params/await_params_page.dart';
-import '../navigator/nav/nav1_page.dart';
-import '../navigator/nav/nav2_page.dart';
-import '../navigator/off/off_page.dart';
-import '../navigator/offAll/offall_page.dart';
-
-import '../navigator/send_params/send_params_page.dart';
+import 'widgets/rotas_nativas_widget.dart';
+import 'widgets/rotas_nomeadas_widget.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -23,74 +16,18 @@ class _HomePageState extends State<HomePage> {
       appBar: AppBar(
         title: const Text('Home Page'),
       ),
-      body: Center(
-          child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
+      body: const Column(
         children: [
-          ElevatedButton(
-            onPressed: () {
-              Get.to(() => const Nav1Page());
-              // Navigator.pushNamed(context, '/nav1');
-              /*             Navigator.of(context).push(
-                MaterialPageRoute(builder: (context) => const Nav1Page()),
-              );*/
-            },
-            child: const Text('Nav Page 01'),
-          ),
-          const SizedBox(height: 20),
-          ElevatedButton(
-            onPressed: () {
-              Get.to(() => const Nav2Page());
-              //  Navigator.pushNamed(context, '/nav2');
-            },
-            child: const Text('Nav Page 02'),
-          ),
-          const SizedBox(height: 20),
-          ElevatedButton(
-            onPressed: () {
-              Get.to(() => const OffPage());
-              // Navigator.pushNamed(context, '/nav1');
-              /*             Navigator.of(context).push(
-                MaterialPageRoute(builder: (context) => const Nav1Page()),
-              );*/
-            },
-            child: const Text('Off Page'),
-          ),
-          const SizedBox(height: 20),
-          ElevatedButton(
-            onPressed: () {
-              Get.to(() => const OffallPage());
-              // Navigator.pushNamed(context, '/nav1');
-              /*             Navigator.of(context).push(
-                MaterialPageRoute(builder: (context) => const Nav1Page()),
-              );*/
-            },
-            child: const Text('OffAll (PopAndRemoveUntill)'),
-          ),
-          const SizedBox(height: 20),
-          ElevatedButton(
-            onPressed: () {
-              Get.to(() => const SendParamsPage());
-              // Navigator.pushNamed(context, '/nav1');
-              /*             Navigator.of(context).push(
-                MaterialPageRoute(builder: (context) => const Nav1Page()),
-              );*/
-            },
-            child: const Text('Send Params'),
-          ),
-          const SizedBox(height: 20),
-          ElevatedButton(
-            onPressed: () {
-              Get.to(() => const AwaitParamsPage());
-              // Navigator.pushNamed(context, '/nav1');
-              /*             Navigator.of(context).push(
-                MaterialPageRoute(builder: (context) => const Nav1Page()),
-              );*/
-            },
-            child: const Text('AwaitParamsPage'),
+          Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              RotasNativasWidget(),
+              SizedBox(width: 10),
+              RotasNomeadasWidget(),
+            ],
           ),
         ],
-      )),
+      ),
     );
   }
 }
