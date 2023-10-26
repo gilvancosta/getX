@@ -36,7 +36,7 @@ class MyApp extends StatelessWidget {
           page: () => const ParameterPage(),
           children: [
             GetPage(name: '/arguments', page: () => const ArgumentsParamPage()),
-            GetPage(name: '/pathparam', page: () => const PathParamPage()),
+            GetPage(name: '/pathparam/:slug', page: () => const PathParamPage()),
             GetPage(name: '/queryparam', page: () => const QueryParamPage()),
           ],
         ),

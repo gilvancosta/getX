@@ -23,9 +23,33 @@ class ParameterPage extends StatelessWidget {
             child: const Text('Argumentos'),
           ),
           const SizedBox(height: 20),
-          ElevatedButton(onPressed: () {}, child: const Text('pathParameters')),
+          ElevatedButton(
+            onPressed: () {
+              final param = Uri.encodeFull('path-page-product');
+              Get.toNamed(
+                '/parameter/pathparam/$param',
+              );
+            },
+            child: const Text('pathParameters'),
+          ),
           const SizedBox(height: 20),
-          ElevatedButton(onPressed: () {}, child: const Text('Query Param')),
+          ElevatedButton(
+            onPressed: () {
+              /* 
+              Get.toNamed(
+                '/parameter/queryparam?id=1&product=Teclado Didital',
+              ); */
+
+              Get.toNamed(
+                '/parameter/queryparam',
+                parameters: {
+                  'id': '2',
+                  'product': 'Teclado Didital',
+                },
+              );
+            },
+            child: const Text('Query Param'),
+          ),
         ],
       )),
     );
