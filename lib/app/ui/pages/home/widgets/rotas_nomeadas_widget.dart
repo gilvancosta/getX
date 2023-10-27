@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../../named_routes/exemplo01/exemplo01_page.dart';
+import '../../routes_named/exemplo01/exemplo01_page.dart';
 
 class RotasNomeadasWidget extends StatelessWidget {
   const RotasNomeadasWidget({super.key});
@@ -20,8 +20,8 @@ class RotasNomeadasWidget extends StatelessWidget {
             children: [
               ElevatedButton(
                 onPressed: () {
-                  Get.toNamed('/home/exemplo01');
-                  // Navigator.pushNamed(context, '/nav1');
+                  Get.toNamed('/exemplo01');
+                  // Navigator.pushNamed(context, '/exemplo01');
                   /*             Navigator.of(context).push(
                           MaterialPageRoute(builder: (context) => const Nav1Page()),
                         );*/
@@ -31,7 +31,7 @@ class RotasNomeadasWidget extends StatelessWidget {
               const SizedBox(height: 20),
               ElevatedButton(
                 onPressed: () {
-                  Get.toNamed('/home/notfound2');
+                  Get.toNamed('/notfound2');
                 },
                 child: const Text('Não Existe'),
               ),
@@ -43,8 +43,20 @@ class RotasNomeadasWidget extends StatelessWidget {
                 child: const Text('Envio de Parametros'),
               ),
               const SizedBox(height: 20),
-
-
+              ElevatedButton(
+                onPressed: () {
+                  Get.toNamed('/middleware');
+                },
+                child: const Text('Middleware'),
+              ),
+              const SizedBox(height: 20),
+              ElevatedButton(
+                onPressed: () {
+                  Get.toNamed('/nested');
+                },
+                child: const Text('navigator 2.0'),
+              ),
+              const SizedBox(height: 20),
             ],
           ),
         ],

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'widgets/rotas_nativas_widget.dart';
 import 'widgets/rotas_nomeadas_widget.dart';
 
@@ -25,6 +26,7 @@ class _HomePageState extends State<HomePage> {
               SizedBox(width: 10),
               RotasNomeadasWidget(),
             ],
+
           ),
         ],
       ),
